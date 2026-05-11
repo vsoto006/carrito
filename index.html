@@ -1,343 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunaria</title>
 
-  <title>Lunaria | Florería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/stylecarrito.css">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#fdf7f5;
+      color:#4a3d3d;
+    }
+
+    header{
+      text-align:center;
+      padding:40px 20px 20px;
+    }
+
+    .logo{
+      width:90px;
+      height:90px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-bottom:15px;
+    }
+
+    h1{
+      font-family:'Playfair Display', serif;
+      font-size:3rem;
+      letter-spacing:2px;
+    }
+
+    .subtitle{
+      color:#8b7474;
+      margin-top:10px;
+      font-size:1rem;
+    }
+
+    .gallery{
+      max-width:1100px;
+      margin:40px auto;
+      padding:0 20px;
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:0.3s;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.02);
+    }
+
+    .button-container{
+      text-align:center;
+      margin:50px 20px 70px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#d8b4b4;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-size:1rem;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#c59b9b;
+      transform:translateY(-2px);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      color:#9a8a8a;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:600px){
+      h1{
+        font-size:2.3rem;
+      }
+
+      .gallery img{
+        height:260px;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-light">
+  <header>
+    <!-- CAMBIA logo.png por tu logo -->
+    <img src="logo.png" alt="Logo Lunaria" class="logo">
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <h1>Lunaria</h1>
 
-  <div class="container">
+    <p class="subtitle">
+      Flores para momentos especiales ✿
+    </p>
+  </header>
 
-    <a class="navbar-brand fw-bold" href="#">
-      🌙 Lunaria
+  <section class="gallery">
+
+    <!-- CAMBIA las imágenes por las tuyas -->
+
+    <img src="img1.jpg" alt="Flores 1">
+    <img src="img2.jpg" alt="Flores 2">
+    <img src="img3.jpg" alt="Flores 3">
+    <img src="img4.jpg" alt="Flores 4">
+    <img src="img5.jpg" alt="Flores 5">
+    <img src="img6.jpg" alt="Flores 6">
+
+  </section>
+
+  <div class="button-container">
+    <a 
+      href="https://forms.office.com/r/sLtGsUqsRi" 
+      target="_blank"
+      class="btn">
+      Hacer pedido
     </a>
-
-    <!-- BOTÓN MENÚ -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-
-      <ul class="navbar-nav me-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="#flores">Arreglos</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
-
-      </ul>
-
-      <!-- BOTONES -->
-      <div class="d-flex">
-
-        <button class="btn btn-outline-light me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-          🛒
-          <span class="badge bg-danger" id="contador-carrito">0</span>
-        </button>
-
-        <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-          ☰
-        </button>
-
-      </div>
-
-    </div>
-
   </div>
 
-</nav>
-
-<!-- HERO -->
-<section class="hero text-white text-center d-flex align-items-center justify-content-center mb-4" id="hero1">
-
-  <div class="container">
-
-    <h1 class="display-4">Flores que hablan por ti ✨</h1>
-
-    <p class="lead">
-      Arreglos florales elegantes y personalizados para cada ocasión.
-    </p>
-
-    <!-- BOTÓN FORMS -->
-    <a href="https://forms.office.com/r/sLtGsUqsRi" target="_blank" class="btn btn-light btn-lg">
-      Hacer pedido 💐
-    </a>
-
-  </div>
-
-</section>
-
-<!-- PRODUCTOS -->
-<div class="container py-4" id="flores">
-
-  <h1 class="text-center mb-4">FLORERÍA LUNARIA</h1>
-
-  <div class="row">
-
-    <!-- PRODUCTOS -->
-    <div class="col-md-8">
-
-      <div class="row g-3">
-
-        <!-- PRODUCTO 1 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img1.jpg" class="card-img-top" alt="Ramo Rosas">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Ramo de Rosas</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Ramo de Rosas')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTO 2 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img2.jpg" class="card-img-top" alt="Tulipanes">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Tulipanes Pastel</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Tulipanes Pastel')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTO 3 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img3.jpg" class="card-img-top" alt="Girasoles">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Bouquet de Girasoles</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Bouquet de Girasoles')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTO 4 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img4.jpg" class="card-img-top" alt="Lirios">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Caja de Lirios</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Caja de Lirios')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTO 5 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img5.jpg" class="card-img-top" alt="Orquídeas">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Orquídeas Elegance</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Orquídeas Elegance')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTO 6 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-
-            <img src="img/img6.jpg" class="card-img-top" alt="Flores Blancas">
-
-            <div class="card-body">
-
-              <h5 class="card-title">Arreglo Blanco</h5>
-
-              <button class="btn btn-success w-100" onclick="agregarProducto('Arreglo Blanco')">
-                Agregar
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CARRITO -->
-    <div class="col-md-4">
-
-      <div class="card" id="carritocard">
-
-        <div class="card-header bg-dark text-white">
-          Carrito
-        </div>
-
-        <ul class="list-group list-group-flush" id="lista-carrito">
-
-          <li class="list-group-item text-muted text-center">
-            No hay productos
-          </li>
-
-        </ul>
-
-        <div class="card-footer text-center">
-
-          <button class="btn btn-danger" onclick="eliminarProducto()">
-            Eliminar último producto
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- OFFCANVAS MENÚ -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
-
-  <div class="offcanvas-header">
-
-    <h5 class="offcanvas-title">
-      Menú
-    </h5>
-
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-
-  </div>
-
-  <div class="offcanvas-body">
-
-    <ul class="list-unstyled">
-
-      <li><a href="#" class="nav-link">Inicio</a></li>
-      <li><a href="#flores" class="nav-link">Arreglos</a></li>
-      <li><a href="#contacto" class="nav-link">Contacto</a></li>
-
-    </ul>
-
-  </div>
-
-</div>
-
-<!-- OFFCANVAS CARRITO -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
-
-  <div class="offcanvas-header">
-
-    <h5 class="offcanvas-title">
-      Tu carrito
-    </h5>
-
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-
-  </div>
-
-  <div class="offcanvas-body">
-
-    <ul class="list-group" id="lista-carrito-offcanvas">
-
-      <li class="list-group-item text-muted text-center">
-        No hay productos
-      </li>
-
-    </ul>
-
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer id="contacto" class="footer bg-dark text-white text-center py-4">
-
-  <div class="container">
-
-    <h4>🌙 Lunaria</h4>
-
-    <p>
-      Flores para momentos inolvidables.
-    </p>
-
-    <p>
-      Querétaro, México
-    </p>
-
-    <p>
-      📞 442 000 0000
-    </p>
-
-    <div class="social">
-
-      <a href="#" class="text-white me-3">Instagram</a>
-      <a href="#" class="text-white">Facebook</a>
-
-    </div>
-
-    <p class="mt-3">
-      &copy; 2026 Lunaria Florería
-    </p>
-
-  </div>
-
-</footer>
-
-<!-- BOOTSTRAP -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JS -->
-<script src="js/carrito.js"></script>
+  <footer>
+    © 2026 Lunaria
+  </footer>
 
 </body>
 </html>
