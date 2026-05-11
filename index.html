@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -16,26 +17,58 @@
 
     body{
       font-family:'Poppins', sans-serif;
-      background:#f8dede;
-      color:#5c4b4b;
+      background:linear-gradient(to bottom, #fdeeee, #fff7f7);
+      color:#5e4b4b;
+      overflow-x:hidden;
+    }
+
+    /* DETALLES DECORATIVOS */
+
+    .blur1,
+    .blur2{
+      position:fixed;
+      border-radius:50%;
+      filter:blur(80px);
+      z-index:-1;
+      opacity:0.5;
+    }
+
+    .blur1{
+      width:300px;
+      height:300px;
+      background:#f6caca;
+      top:-80px;
+      left:-80px;
+    }
+
+    .blur2{
+      width:250px;
+      height:250px;
+      background:#ffdede;
+      bottom:-60px;
+      right:-60px;
     }
 
     header{
       text-align:center;
-      padding:50px 20px 30px;
+      padding:60px 20px 35px;
+      position:relative;
     }
 
-    /* CUADRO DEL LOGO */
+    /* CAJA DEL LOGO */
+
     .logo-box{
-      width:140px;
-      height:140px;
-      margin:0 auto 20px;
-      background:white;
-      border-radius:30px;
+      width:150px;
+      height:150px;
+      margin:0 auto 25px;
+      background:rgba(255,255,255,0.7);
+      backdrop-filter:blur(10px);
+      border-radius:35px;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      border:1px solid rgba(255,255,255,0.6);
       overflow:hidden;
     }
 
@@ -47,91 +80,139 @@
 
     h1{
       font-family:'Playfair Display', serif;
-      font-size:3.2rem;
-      letter-spacing:2px;
+      font-size:4rem;
+      letter-spacing:3px;
+      color:#7b5c5c;
     }
 
     .subtitle{
-      color:#7d6666;
-      margin-top:10px;
+      margin-top:12px;
+      color:#967b7b;
       font-size:1rem;
+      font-weight:300;
+      letter-spacing:1px;
     }
 
+    .mini-line{
+      width:70px;
+      height:2px;
+      background:#deb2b2;
+      margin:22px auto;
+      border-radius:10px;
+    }
+
+    /* GALERÍA */
+
     .gallery{
-      max-width:1100px;
-      margin:40px auto;
-      padding:0 20px;
+      max-width:1150px;
+      margin:50px auto;
+      padding:0 25px;
 
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
+      gap:25px;
     }
 
-    .gallery img{
+    .card{
+      background:rgba(255,255,255,0.65);
+      backdrop-filter:blur(8px);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.07);
+      transition:0.35s;
+      border:1px solid rgba(255,255,255,0.6);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
       width:100%;
       height:320px;
       object-fit:cover;
-      border-radius:22px;
-      transition:0.3s;
-      box-shadow:0 5px 18px rgba(0,0,0,0.08);
     }
 
-    .gallery img:hover{
-      transform:scale(1.02);
+    .card-text{
+      padding:18px;
+      text-align:center;
     }
+
+    .card-text h3{
+      font-family:'Playfair Display', serif;
+      font-size:1.3rem;
+      margin-bottom:8px;
+      color:#6f5656;
+    }
+
+    .card-text p{
+      font-size:0.92rem;
+      color:#9a7f7f;
+      font-weight:300;
+    }
+
+    /* BOTÓN */
 
     .button-container{
       text-align:center;
-      margin:55px 20px 80px;
+      margin:65px 20px 90px;
     }
 
     .btn{
       display:inline-block;
-      padding:16px 38px;
-      background:white;
-      color:#b57d7d;
+      padding:17px 42px;
+      background:linear-gradient(to right, #e7b8b8, #dca5a5);
+      color:white;
       text-decoration:none;
-      border-radius:40px;
+      border-radius:50px;
       font-size:1rem;
       font-weight:500;
+      letter-spacing:1px;
       transition:0.3s;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      box-shadow:0 10px 20px rgba(220,165,165,0.3);
     }
 
     .btn:hover{
-      transform:translateY(-2px);
-      background:#fff5f5;
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 14px 24px rgba(220,165,165,0.4);
     }
 
     footer{
       text-align:center;
-      padding:25px;
-      color:#8f7a7a;
+      padding:30px;
+      color:#9f8787;
       font-size:0.9rem;
     }
 
     @media(max-width:600px){
 
       h1{
-        font-size:2.4rem;
+        font-size:2.8rem;
       }
 
       .logo-box{
-        width:120px;
-        height:120px;
+        width:130px;
+        height:130px;
       }
 
-      .gallery img{
+      .card img{
         height:260px;
       }
+
     }
+
   </style>
 </head>
 <body>
 
+  <!-- EFECTOS -->
+  <div class="blur1"></div>
+  <div class="blur2"></div>
+
+  <!-- HEADER -->
   <header>
 
-    <!-- PON AQUÍ TU LOGO -->
+    <!-- CAMBIA logo.png POR TU LOGO -->
     <div class="logo-box">
       <img src="logo.png" alt="Logo Lunaria" class="logo">
     </div>
@@ -142,32 +223,76 @@
       Flores para momentos especiales ✿
     </p>
 
+    <div class="mini-line"></div>
+
   </header>
 
+  <!-- GALERÍA -->
   <section class="gallery">
 
-    <!-- CAMBIA LAS IMÁGENES -->
+    <div class="card">
+      <img src="img1.jpg" alt="Flores 1">
+      <div class="card-text">
+        <h3>Rose Bloom</h3>
+        <p>Delicadeza y elegancia en cada pétalo.</p>
+      </div>
+    </div>
 
-    <img src="img1.jpg" alt="Flores 1">
-    <img src="img2.jpg" alt="Flores 2">
-    <img src="img3.jpg" alt="Flores 3">
-    <img src="img4.jpg" alt="Flores 4">
-    <img src="img5.jpg" alt="Flores 5">
-    <img src="img6.jpg" alt="Flores 6">
+    <div class="card">
+      <img src="img2.jpg" alt="Flores 2">
+      <div class="card-text">
+        <h3>Soft Garden</h3>
+        <p>Arreglos suaves con inspiración romántica.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img3.jpg" alt="Flores 3">
+      <div class="card-text">
+        <h3>Moonlight</h3>
+        <p>Detalles florales llenos de luz y calma.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img4.jpg" alt="Flores 4">
+      <div class="card-text">
+        <h3>Pink Dream</h3>
+        <p>Diseños dulces para momentos inolvidables.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img5.jpg" alt="Flores 5">
+      <div class="card-text">
+        <h3>Petal Love</h3>
+        <p>Flores que transmiten emociones sinceras.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img6.jpg" alt="Flores 6">
+      <div class="card-text">
+        <h3>Lunaria</h3>
+        <p>Creaciones florales inspiradas en la belleza.</p>
+      </div>
+    </div>
 
   </section>
 
+  <!-- BOTÓN -->
   <div class="button-container">
     <a 
       href="https://forms.office.com/r/sLtGsUqsRi" 
       target="_blank"
       class="btn">
-      Hacer pedido
+      ✿ Hacer pedido
     </a>
   </div>
 
+  <!-- FOOTER -->
   <footer>
-    © 2026 Lunaria
+    © 2026 Lunaria · Hecho con amor ✿
   </footer>
 
 </body>
